@@ -7,7 +7,7 @@ echo      JAXMEDIA DOWNLOADER - INSTALADOR AUTOMATICO
 echo ==================================================
 echo.
 
-:: 1. Verificar si Python está instalado
+::Verificar si Python está instalado
 python --version >nul 2>&1
 if %errorlevel% neq 0 (
     echo [X] Python no detectado.
@@ -28,7 +28,7 @@ if %errorlevel% neq 0 (
     echo [OK] Python detectado.
 )
 
-:: 2. Verificar FFmpeg (Necesario para MP3)
+::Verificar FFmpeg (Necesario para MP3)
 ffmpeg -version >nul 2>&1
 if %errorlevel% neq 0 (
     echo [!] FFmpeg no detectado (Necesario para convertir a MP3).
@@ -53,7 +53,7 @@ echo.
 echo Creando el Launcher...
 cd ..
 
-:: 3. Crear el archivo LAUNCHER.BAT dinámicamente
+::Crear el archivo LAUNCHER.BAT dinámicamente
 (
 echo @echo off
 echo title JaxMedia Server

@@ -1,7 +1,7 @@
 :root {
     --bg-color: #0a0a0a;
     --card-bg: #161616;
-    --accent: #7c3aed; /* Violeta intenso */
+    --accent: #7c3aed;
     --accent-hover: #6d28d9;
     --text: #ffffff;
     --text-dim: #a1a1aa;
@@ -19,7 +19,6 @@ body {
     overflow: hidden;
 }
 
-/* Fondo animado sutil */
 body::before {
     content: '';
     position: absolute;
@@ -160,9 +159,6 @@ footer {
     text-align: center;
 }
 
-
-/* --- Estilos para la página de Issues --- */
-
 .issues-link-container {
     margin-top: 15px;
 }
@@ -189,10 +185,10 @@ footer {
     background: rgba(0, 0, 0, 0.5);
     padding: 15px;
     border-radius: 8px;
-    font-family: 'JetBrains Mono', monospace; /* Fuente tipo código */
+    font-family: 'JetBrains Mono', monospace; 
     text-align: left;
     font-size: 0.85rem;
-    color: #00ff9d; /* Verde terminal */
+    color: #00ff9d; 
     margin: 20px 0;
     border: 1px solid rgba(0, 255, 157, 0.2);
 }
@@ -234,7 +230,7 @@ footer {
     font-weight: bold;
     border-radius: 10px;
     transition: 0.3s;
-    box-sizing: border-box; /* Para que el padding no rompa el ancho */
+    box-sizing: border-box; 
 }
 
 .github-btn:hover {
