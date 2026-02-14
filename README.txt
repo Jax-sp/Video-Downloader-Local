@@ -4,7 +4,7 @@
 ¡Gracias por descargar JaxMedia Downloader!
 
 INSTRUCCIONES DE INSTALACIÓN (Solo la primera vez):
-1. Haz doble clic en el archivo "installer.bat".
+1. descarga y extrae el .zip, Y haz doble clic en el archivo "installer.bat".
    - Esto configurará el entorno y descargará lo necesario.
    - Espera a que termine y se cierre.
 
