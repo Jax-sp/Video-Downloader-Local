@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jax Media Downloader</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1 class="glitch" data-text="MEDIA DOWNLOADER">MEDIA DOWNLOADER</h1>
+            <p class="subtitle">Descarga música y video sin límites.</p>
+            
+            <form action="/download" method="POST" id="dlForm">
+                <div class="input-group">
+                    <input type="text" name="url" placeholder="Pega tu enlace de YouTube aquí..." required autocomplete="off">
+                </div>
+
+                <div class="options">
+                    <label class="radio-label">
+                        <input type="radio" name="format" value="mp3" checked>
+                        <span class="custom-radio"></span> Audio (MP3 192kbps)
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="format" value="mp4">
+                        <span class="custom-radio"></span> Video (HD MP4)
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="format" value="whatsapp">
+                        <span class="custom-radio"></span> Para WhatsApp (beta)
+                    </label>
+                </div>
+
+                <button type="submit" id="btn-descargar">
+                    <span class="btn-text">DESCARGAR</span>
+                    <div class="loader" id="loader"></div>
+                </button>
+            
+                <div class="footer-links">
+                    <a href="/guide" class="nav-link">📚 Cómo usar</a>
+                </div>
+
+            </form>
+        </div>
+        <footer>Desarrollado por Jax | 2026</footer>
+    </div>
+
+    <script>
+        const form = document.getElementById('dlForm');
+        const btn = document.getElementById('btn-descargar');
+        const loader = document.getElementById('loader');
+        const text = document.querySelector('.btn-text');
+
+        form.addEventListener('submit', () => {
+            text.style.display = 'none';
+            loader.style.display = 'block';
+            btn.disabled = true;
+            btn.style.opacity = '0.7';
+            
+            // Reactivar botón después de unos segundos (simulando que la descarga inició)
+            setTimeout(() => {
+                text.style.display = 'block';
+                loader.style.display = 'none';
+                btn.disabled = false;
+                btn.style.opacity = '1';
+                form.reset();
+            }, 8000); 
+        });
+    </script>
+</body>
+</html>
