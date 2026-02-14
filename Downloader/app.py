@@ -9,7 +9,7 @@ from threading import Timer
 
 app = Flask(__name__)
 
-#Configuración: Buscar cookies locales si existen
+#buscar cookies locales si existen
 def get_cookie_file():
     if os.path.exists('cookies.txt'):
         return 'cookies.txt'
@@ -40,7 +40,7 @@ def download():
     temp_dir = get_temp_dir()
     cookie_file = get_cookie_file()
     
-    # Configuración base
+    #configuración base
     ydl_opts = {
         'outtmpl': os.path.join(temp_dir, '%(title)s.%(ext)s'),
         'restrictfilenames': True,
@@ -51,7 +51,7 @@ def download():
     if cookie_file:
         ydl_opts['cookiefile'] = cookie_file
     
-    #Lógica de formatos
+    #logica de formatos
     if formato == 'mp3':
         ydl_opts.update({
             'format': 'bestaudio/best',
@@ -96,6 +96,6 @@ def download():
         return f"Error: {str(e)}<br><br><a href='/'>Volver</a>", 500
 
 if __name__ == '__main__':
-    #Abrir navegador automáticamente tras 1.5 segundos
+    #abrir navegador automáticamente tras 1.5 segundos
     Timer(1.5, open_browser).start()
     app.run(host='0.0.0.0', port=5000, debug=False)
